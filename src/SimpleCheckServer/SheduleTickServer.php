@@ -26,13 +26,13 @@ class SheduleTickServer extends PluginTask{
 
    private $plugin;
     
-    private $tick;
+   private $tick;
     
-    private $average;
+   private $average;
     
-    private $tickusage;
+   private $tickusage;
     
-    private $tickusageaverage;
+   private $tickusageaverage;
     
    public $Checker = 0;
     
@@ -55,5 +55,4 @@ class SheduleTickServer extends PluginTask{
             $this->plugin->getServer()->getLogger()->info("§6ServerCheckServer Been stoped !");
         }
     }
-
 }
