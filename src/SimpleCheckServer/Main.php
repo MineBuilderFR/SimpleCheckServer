@@ -61,15 +61,16 @@ class Main extends PluginBase implements Listener{
             $this->Config->save();
         }
         
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
         if($this->Config->get("AutoCheckServerWhenServerStart") == "true"){
             $this->CallSheduler();
         }else{
             $this->getServer()->getLogger()->info("§eCheckServer not check When Server start (Change in Config.yml)");
         }
+        
         $this->getServer()->getLogger()->info("=>");
         $this->getServer()->getLogger()->info("§2SimpleCheckServer Enabled ! §6(By MineBuilderFR Y-M++)");
         $this->getServer()->getLogger()->info("=>");
+        $this->getServer()->getPluginManager()->registerEvents($this, $this);
         
     }
     
@@ -93,6 +94,7 @@ class Main extends PluginBase implements Listener{
         $this->getServer()->getScheduler()->cancelTask($this->IDTickServer["Server"]);
         unset($this->IDTickServer["Server"]);
     }
+    
     public function onCommand(CommandSender $sender, Command $command,$label,array $args){
         switch($command->getName()){
            case "checkserver":{
@@ -123,5 +125,9 @@ class Main extends PluginBase implements Listener{
            }
         }
     }
+    
+    public function onDisable(){
+		$this->getServer()->getLogger()->info("SimpleCheckServer been disabled !");
+	}
     //Soon : Added Event
 }
