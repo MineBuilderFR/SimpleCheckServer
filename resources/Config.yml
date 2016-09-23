@@ -1,3 +1,5 @@
 ---
 InformationBroadcastInSecond: 3
+StopBroadcastAfterChecker: 0
+AutoCheckServerWhenServerStart: "true"
 ...
