@@ -82,7 +82,6 @@ class Main extends PluginBase implements Listener{
     
     public function CallSheduler(){
         $timesec = $this->Config->get("InformationBroadcastInSecond");
-        $rkey = rand(0,1000);
         $shedulerplug = new SheduleTickServer($this);
         $h = $this->getServer()->getScheduler()->scheduleRepeatingTask($shedulerplug, $timesec*20);
         $shedulerplug->setHandler($h);
@@ -120,7 +119,6 @@ class Main extends PluginBase implements Listener{
                    $this->UnsetSheduler();
                    $sender->sendMessage("§2CheckServer been Stoped !");
                }
-                   
                break;
            }
         }
