@@ -46,7 +46,7 @@ class Main extends PluginBase implements Listener{
             $this->Config->save();
         }
         if(!$this->Config->exists("AutoCheckServerWhenServerStart")){
-            $this->Config->set("AutoCheckServerWhenServerStart", "true");
+            $this->Config->set("AutoCheckServerWhenServerStart", "false");
             $this->Config->save();
         }
         
