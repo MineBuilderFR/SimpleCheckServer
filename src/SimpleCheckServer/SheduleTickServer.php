@@ -26,14 +26,6 @@ class SheduleTickServer extends PluginTask{
 
    private $plugin;
     
-   private $tick;
-    
-   private $average;
-    
-   private $tickusage;
-    
-   private $tickusageaverage;
-    
    public $Checker = 0;
     
    public function __construct(Main $plugin){
